@@ -1,0 +1,39 @@
+name: Configure GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  configure-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure Pages source and enforce HTTPS
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const { owner, repo } = context.repo;
+            try {
+              core.info(`Setting Pages source to gh-pages for ${owner}/${repo}`);
+              await github.request('PUT /repos/{owner}/{repo}/pages', {
+                owner,
+                repo,
+                source: { branch: 'gh-pages', path: '/' }
+              });
+
+              core.info('Enforcing HTTPS for Pages');
+              await github.request('PATCH /repos/{owner}/{repo}/pages', {
+                owner,
+                repo,
+                https_enforced: true
+              });
+
+              core.info('Pages configured successfully');
+            } catch (err) {
+              core.warning(`Pages configuration failed: ${err.message}`);
+              throw err;
+            }
