@@ -1,0 +1,1674 @@
+import { a as __toESM } from "../_runtime.mjs";
+import { a as Trigger2, i as Root2, l as require_jsx_runtime, n as Header, r as Item, s as Slot, t as Content2, u as require_react } from "../_libs/@radix-ui/react-accordion+[...].mjs";
+import { t as require_FileSaver_min } from "../_libs/file-saver.mjs";
+import { n as clsx, t as cva } from "../_libs/class-variance-authority+clsx.mjs";
+import { t as twMerge } from "../_libs/tailwind-merge.mjs";
+import { t as Root } from "../_libs/radix-ui__react-label.mjs";
+import { t as Root$1 } from "../_libs/radix-ui__react-separator.mjs";
+import { t as ChevronDown } from "../_libs/lucide-react.mjs";
+import { a as PageBreak, c as TabStopType, d as TableRow, f as TextRun, i as Packer, l as Table, n as BorderStyle, o as Paragraph, p as WidthType, r as File, s as ShadingType, t as AlignmentType, u as TableCell } from "../_libs/docx.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-YO9dJqnH.js
+var import_react = /* @__PURE__ */ __toESM(require_react());
+var import_jsx_runtime = require_jsx_runtime();
+var import_FileSaver_min = /* @__PURE__ */ __toESM(require_FileSaver_min());
+function cn(...inputs) {
+	return twMerge(clsx(inputs));
+}
+var buttonVariants = cva("inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium cursor-pointer transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0", {
+	variants: {
+		variant: {
+			default: "bg-primary text-primary-foreground shadow hover:bg-primary/90",
+			destructive: "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
+			outline: "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
+			secondary: "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
+			ghost: "hover:bg-accent hover:text-accent-foreground",
+			link: "text-primary underline-offset-4 hover:underline"
+		},
+		size: {
+			default: "h-9 px-4 py-2",
+			sm: "h-8 rounded-md px-3 text-xs",
+			lg: "h-10 rounded-md px-8",
+			icon: "h-9 w-9"
+		}
+	},
+	defaultVariants: {
+		variant: "default",
+		size: "default"
+	}
+});
+var Button = import_react.forwardRef(({ className, variant, size, asChild = false, ...props }, ref) => {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(asChild ? Slot : "button", {
+		className: cn(buttonVariants({
+			variant,
+			size,
+			className
+		})),
+		ref,
+		...props
+	});
+});
+Button.displayName = "Button";
+var Input = import_react.forwardRef(({ className, type, ...props }, ref) => {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
+		type,
+		className: cn("flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm", className),
+		ref,
+		...props
+	});
+});
+Input.displayName = "Input";
+var labelVariants = cva("text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70");
+var Label = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root, {
+	ref,
+	className: cn(labelVariants(), className),
+	...props
+}));
+Label.displayName = Root.displayName;
+var Card = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+	ref,
+	className: cn("rounded-xl border bg-card text-card-foreground shadow", className),
+	...props
+}));
+Card.displayName = "Card";
+var CardHeader = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+	ref,
+	className: cn("flex flex-col space-y-1.5 p-6", className),
+	...props
+}));
+CardHeader.displayName = "CardHeader";
+var CardTitle = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+	ref,
+	className: cn("font-semibold leading-none tracking-tight", className),
+	...props
+}));
+CardTitle.displayName = "CardTitle";
+var CardDescription = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+	ref,
+	className: cn("text-sm text-muted-foreground", className),
+	...props
+}));
+CardDescription.displayName = "CardDescription";
+var CardContent = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+	ref,
+	className: cn("p-6 pt-0", className),
+	...props
+}));
+CardContent.displayName = "CardContent";
+var CardFooter = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+	ref,
+	className: cn("flex items-center p-6 pt-0", className),
+	...props
+}));
+CardFooter.displayName = "CardFooter";
+var Separator = import_react.forwardRef(({ className, orientation = "horizontal", decorative = true, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root$1, {
+	ref,
+	decorative,
+	orientation,
+	className: cn("shrink-0 bg-border", orientation === "horizontal" ? "h-[1px] w-full" : "h-full w-[1px]", className),
+	...props
+}));
+Separator.displayName = Root$1.displayName;
+var Accordion = Root2;
+var AccordionItem = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Item, {
+	ref,
+	className: cn("border-b", className),
+	...props
+}));
+AccordionItem.displayName = "AccordionItem";
+var AccordionTrigger = import_react.forwardRef(({ className, children, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Header, {
+	className: "flex",
+	children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Trigger2, {
+		ref,
+		className: cn("flex flex-1 items-center justify-between py-4 text-sm font-medium cursor-pointer transition-all hover:underline text-left [&[data-state=open]>svg]:rotate-180", className),
+		...props,
+		children: [children, /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ChevronDown, { className: "h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200" })]
+	})
+}));
+AccordionTrigger.displayName = Trigger2.displayName;
+var AccordionContent = import_react.forwardRef(({ className, children, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Content2, {
+	ref,
+	className: "overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down",
+	...props,
+	children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+		className: cn("pb-4 pt-0", className),
+		children
+	})
+}));
+AccordionContent.displayName = Content2.displayName;
+function emptyRep() {
+	return {
+		id: Math.random().toString(36).slice(2),
+		name: "",
+		count: ""
+	};
+}
+var SHAREHOLDERS = [
+	"UBA",
+	"NFC BANK",
+	"AFRILAND FIRST BANK PLC"
+];
+/**
+* Expand the representative list into one entry per transaction row.
+* A blank count means the tool decides how many times that name appears;
+* the final assignment is shuffled so names are not in a predictable order.
+*/
+function repPool(reps, fallback, total) {
+	const names = (reps ?? []).map((r) => ({
+		name: r.name.trim().toUpperCase(),
+		count: Math.floor(num(r.count) || 0)
+	})).filter((r) => r.name);
+	if (names.length === 0) names.push({
+		name: fallback.toUpperCase(),
+		count: 0
+	});
+	const pool = [];
+	for (const r of names) for (let i = 0; i < r.count; i++) pool.push(r.name);
+	const auto = names.filter((r) => r.count <= 0);
+	const fillFrom = auto.length > 0 ? auto : names;
+	while (pool.length < total) {
+		const pick = fillFrom[Math.floor(Math.random() * fillFrom.length)];
+		pool.push(pick?.name ?? fallback.toUpperCase());
+	}
+	for (let i = pool.length - 1; i > 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1));
+		[pool[i], pool[j]] = [pool[j], pool[i]];
+	}
+	return pool.slice(0, total);
+}
+var DEFAULT_INSTITUTION = {
+	name: "MMOCKMBIE CREDIT UNION COOPERATIVE LTD (MFI)",
+	affiliate: "RAINBOW – CAMEROON Cooperative Credit Union Limited",
+	regNo: "Coopgic Reg No. 17/035/CMR/SW/55/290/CCA/360/3601",
+	cobac: "COBAC DECISION N° D-2021/317",
+	minfi: "0000381",
+	shareholder: "National Financial Credit Plc. (NFC BANK)",
+	slogan: "Where Dreams are Realised",
+	city: "Buea",
+	branch: "Mmoccul Buea",
+	tel: "+237 680 485 489 / 675 952 741",
+	email: "contact@mmoccul.com",
+	website: "www.mmoccul.com",
+	poBox: "P.O. BOX 313, Buea",
+	cnps: "325-0116658-000-E",
+	taxpayer: "M071712677486E",
+	managerName: "General Manager",
+	bankCode: "10025",
+	branchCode: "00021",
+	bankAccountNumber: "15101070514",
+	ribKey: "58",
+	swift: "NAFCCMCY",
+	iban: "CM21 10025 00021 15101070514 58",
+	currency: "XAF Franc Cfa"
+};
+function num(v) {
+	const n = typeof v === "number" ? v : parseFloat(String(v).replace(/[^\d.-]/g, ""));
+	return Number.isFinite(n) ? n : 0;
+}
+/** Cameroon style: spaces as thousand separators. */
+function fmt(v) {
+	return Math.round(num(v)).toLocaleString("en-US").replace(/,/g, " ");
+}
+var ONES = [
+	"ZERO",
+	"ONE",
+	"TWO",
+	"THREE",
+	"FOUR",
+	"FIVE",
+	"SIX",
+	"SEVEN",
+	"EIGHT",
+	"NINE",
+	"TEN",
+	"ELEVEN",
+	"TWELVE",
+	"THIRTEEN",
+	"FOURTEEN",
+	"FIFTEEN",
+	"SIXTEEN",
+	"SEVENTEEN",
+	"EIGHTEEN",
+	"NINETEEN"
+];
+var TENS = [
+	"",
+	"",
+	"TWENTY",
+	"THIRTY",
+	"FORTY",
+	"FIFTY",
+	"SIXTY",
+	"SEVENTY",
+	"EIGHTY",
+	"NINETY"
+];
+function below1000(n) {
+	if (n < 20) return ONES[n] ?? "";
+	if (n < 100) {
+		const t = TENS[Math.floor(n / 10)] ?? "";
+		const r = n % 10;
+		return r ? `${t} ${ONES[r]}` : t;
+	}
+	const h = `${ONES[Math.floor(n / 100)]} HUNDRED`;
+	const r = n % 100;
+	return r ? `${h} AND ${below1000(r)}` : h;
+}
+function numberToWords(value) {
+	let n = Math.round(Math.abs(value));
+	if (n === 0) return "ZERO";
+	const units = [
+		[1e9, "BILLION"],
+		[1e6, "MILLION"],
+		[1e3, "THOUSAND"]
+	];
+	const parts = [];
+	for (const [div, label] of units) if (n >= div) {
+		parts.push(`${below1000(Math.floor(n / div))} ${label}`);
+		n %= div;
+	}
+	if (n > 0) parts.push(below1000(n));
+	return parts.join(" ");
+}
+function amountWords(value) {
+	return `${numberToWords(value)} FRANCS`;
+}
+function ordinal(d) {
+	if (d > 3 && d < 21) return `${d}th`;
+	switch (d % 10) {
+		case 1: return `${d}st`;
+		case 2: return `${d}nd`;
+		case 3: return `${d}rd`;
+		default: return `${d}th`;
+	}
+}
+var MONTHS = [
+	"January",
+	"February",
+	"March",
+	"April",
+	"May",
+	"June",
+	"July",
+	"August",
+	"September",
+	"October",
+	"November",
+	"December"
+];
+function longDate(iso, upper = false) {
+	if (!iso) return "";
+	const d = /* @__PURE__ */ new Date(`${iso}T00:00:00`);
+	if (Number.isNaN(d.getTime())) return iso;
+	const s = `${ordinal(d.getDate())} ${MONTHS[d.getMonth()]} ${d.getFullYear()}`;
+	return upper ? s.toUpperCase() : s;
+}
+/** "24th day of June, 2026" as printed on the attestations. */
+function dayOfMonthYear(iso) {
+	if (!iso) return "";
+	const d = /* @__PURE__ */ new Date(`${iso}T00:00:00`);
+	if (Number.isNaN(d.getTime())) return iso;
+	return `${ordinal(d.getDate())} day of ${MONTHS[d.getMonth()]}, ${d.getFullYear()}`;
+}
+function shortDate(iso) {
+	if (!iso) return "";
+	const d = /* @__PURE__ */ new Date(`${iso}T00:00:00`);
+	if (Number.isNaN(d.getTime())) return iso;
+	const p = (x) => String(x).padStart(2, "0");
+	return `${p(d.getDate())}/${p(d.getMonth() + 1)}/${d.getFullYear()}`;
+}
+function emptyTxn() {
+	return {
+		id: Math.random().toString(36).slice(2),
+		date: "",
+		description: "",
+		representative: "",
+		reference: "",
+		debit: "",
+		credit: ""
+	};
+}
+function pad(n, w) {
+	return String(n).padStart(w, "0");
+}
+/** DEPRET + ddMMyy + 8-digit unique sequence, as printed on MMOCCUL statements. */
+function makeReference(iso, seq) {
+	const d = /* @__PURE__ */ new Date(`${iso}T00:00:00`);
+	const day = Number.isNaN(d.getTime()) ? 1 : d.getDate();
+	const mon = Number.isNaN(d.getTime()) ? 1 : d.getMonth() + 1;
+	const yr = Number.isNaN(d.getTime()) ? (/* @__PURE__ */ new Date()).getFullYear() : d.getFullYear();
+	return `DEPRET${pad(day, 2)}${pad(mon, 2)}${String(yr).slice(2)}${pad(seq, 8)}`;
+}
+function isoOf(d) {
+	return `${d.getFullYear()}-${pad(d.getMonth() + 1, 2)}-${pad(d.getDate(), 2)}`;
+}
+/** Spread `count` dates evenly (with slight jitter) across the statement period. */
+function spreadDates(startIso, endIso, count) {
+	const start = /* @__PURE__ */ new Date(`${startIso}T00:00:00`);
+	const end = /* @__PURE__ */ new Date(`${endIso}T00:00:00`);
+	if (Number.isNaN(start.getTime()) || Number.isNaN(end.getTime()) || count <= 0) return [];
+	const days = Math.max(1, Math.round((end.getTime() - start.getTime()) / 864e5));
+	const out = [];
+	for (let i = 0; i < count; i++) {
+		const base = (i + 1) * days / (count + 1);
+		const jitter = (Math.random() - .5) * (days / (count + 1)) * .8;
+		const offset = Math.min(days, Math.max(1, Math.round(base + jitter)));
+		const d = new Date(start.getTime() + offset * 864e5);
+		out.push(isoOf(d));
+	}
+	return out.sort();
+}
+/** Split a total into `n` positive amounts rounded to 5 000, exact to the franc. */
+function splitAmount(total, n) {
+	if (n <= 0 || total <= 0) return [];
+	if (n === 1) return [total];
+	const weights = Array.from({ length: n }, () => .4 + Math.random());
+	const sum = weights.reduce((a, b) => a + b, 0);
+	const parts = weights.map((w) => Math.max(5e3, Math.round(total * w / sum / 5e3) * 5e3));
+	let diff = total - parts.reduce((a, b) => a + b, 0);
+	let i = 0;
+	while (diff !== 0 && i < parts.length * 50) {
+		const idx = i % parts.length;
+		const step = diff > 0 ? Math.min(diff, 5e3) : Math.max(diff, -5e3);
+		const next = parts[idx] + step;
+		if (next >= 5e3) {
+			parts[idx] = next;
+			diff -= step;
+		}
+		i++;
+	}
+	if (diff !== 0) parts[parts.length - 1] = parts[parts.length - 1] + diff;
+	return parts;
+}
+/**
+* Build a realistic transaction table from period totals: dates are distributed
+* between the statement start and end dates, the running balance never goes
+* negative, and references are uniquely generated per operation date.
+*/
+function generateTransactions(opts, openingBalance) {
+	const count = Math.max(1, Math.floor(opts.count));
+	const debitCount = opts.totalDebit > 0 ? Math.max(1, Math.round(count / 2)) : 0;
+	const creditCount = opts.totalCredit > 0 ? Math.max(1, count - debitCount) : 0;
+	const total = debitCount + creditCount;
+	if (total === 0) return [];
+	const debits = splitAmount(opts.totalDebit, debitCount);
+	const credits = splitAmount(opts.totalCredit, creditCount);
+	const dates = spreadDates(opts.startDate, opts.endDate, total);
+	const reps = repPool(opts.reps, opts.memberName, total);
+	const acct = opts.memberNumber || "";
+	const out = [];
+	let balance = openingBalance;
+	let di = 0;
+	let ci = 0;
+	let seq = Math.floor(Math.random() * 400) + 20;
+	for (let i = 0; i < total; i++) {
+		const date = dates[i] ?? opts.endDate;
+		const rep = reps[i] ?? opts.memberName.toUpperCase();
+		const nextDebit = debits[di];
+		const canDebit = di < debits.length && balance - (nextDebit ?? 0) >= 0;
+		const takeCredit = ci < credits.length && (!canDebit || (di < debits.length ? Math.random() < .5 : true));
+		seq += Math.floor(Math.random() * 40) + 3;
+		if (takeCredit) {
+			const amount = credits[ci++];
+			balance += amount;
+			out.push({
+				id: Math.random().toString(36).slice(2),
+				date,
+				description: `CASH IN ${acct} MEMBERS SAVINGS`,
+				representative: rep,
+				reference: makeReference(date, seq),
+				debit: "",
+				credit: String(amount)
+			});
+		} else if (di < debits.length) {
+			const amount = debits[di++];
+			balance -= amount;
+			out.push({
+				id: Math.random().toString(36).slice(2),
+				date,
+				description: `CASH OUT ${acct} MEMBERS SAVINGS`,
+				representative: rep,
+				reference: makeReference(date, seq),
+				debit: String(amount),
+				credit: ""
+			});
+		}
+	}
+	return out;
+}
+var CONTENT_W = 9360;
+var NAVY = "003366";
+/** The originals are typed in Times New Roman 12pt; the statement is 7pt Arial. */
+var SERIF = "Times New Roman";
+var SANS = "Arial";
+var thin = {
+	style: BorderStyle.SINGLE,
+	size: 1,
+	color: "AAAAAA"
+};
+var cellBorders = {
+	top: thin,
+	bottom: thin,
+	left: thin,
+	right: thin
+};
+function p(text, opts = {}) {
+	return new Paragraph({
+		alignment: opts.align ?? AlignmentType.LEFT,
+		spacing: {
+			after: opts.spacingAfter ?? 120,
+			line: 300
+		},
+		children: [new TextRun({
+			text,
+			bold: !!opts.bold,
+			italics: !!opts.italics,
+			size: opts.size ?? 22,
+			color: opts.color ?? "000000",
+			font: SERIF
+		})]
+	});
+}
+function rich(runs, align = AlignmentType.JUSTIFIED) {
+	return new Paragraph({
+		alignment: align,
+		spacing: {
+			after: 160,
+			line: 320
+		},
+		children: runs.map((r) => new TextRun({
+			text: r.text,
+			bold: !!r.bold,
+			size: 24,
+			font: SERIF
+		}))
+	});
+}
+/** Blank space where the pre-printed letterhead sits. */
+function topSpace() {
+	return [p("", { spacingAfter: 240 })];
+}
+/** "Done in Buea, this 24th day of June, 2026" — centered, as on the originals. */
+function doneIn(f, inst) {
+	const branch = (f.branchName || inst.branch || inst.city).trim();
+	return [p("", { spacingAfter: 240 }), p(`Done in ${branch}, this ${dayOfMonthYear(f.issueDate)}`, {
+		align: AlignmentType.CENTER,
+		bold: true,
+		spacingAfter: 240
+	})];
+}
+function headerCell(text, width, size = 16) {
+	return new TableCell({
+		borders: cellBorders,
+		width: {
+			size: width,
+			type: WidthType.DXA
+		},
+		shading: {
+			fill: NAVY,
+			type: ShadingType.CLEAR,
+			color: "auto"
+		},
+		margins: {
+			top: 60,
+			bottom: 60,
+			left: 80,
+			right: 80
+		},
+		children: [new Paragraph({
+			alignment: AlignmentType.CENTER,
+			children: [new TextRun({
+				text,
+				bold: true,
+				size,
+				color: "FFFFFF",
+				font: SANS
+			})]
+		})]
+	});
+}
+function bodyCell(text, width, opts = {}) {
+	return new TableCell({
+		borders: cellBorders,
+		width: {
+			size: width,
+			type: WidthType.DXA
+		},
+		...opts.fill ? { shading: {
+			fill: opts.fill,
+			type: ShadingType.CLEAR,
+			color: "auto"
+		} } : {},
+		margins: {
+			top: 40,
+			bottom: 40,
+			left: 60,
+			right: 60
+		},
+		children: [new Paragraph({
+			alignment: opts.align ?? AlignmentType.LEFT,
+			children: [new TextRun({
+				text,
+				bold: !!opts.bold,
+				size: opts.size ?? 16,
+				font: SANS
+			})]
+		})]
+	});
+}
+function attestationOfAccount(f, inst, words) {
+	const pronoun = f.gender === "her" ? "her" : "his";
+	return [
+		...topSpace(),
+		p(longDate(f.issueDate, true), {
+			align: AlignmentType.RIGHT,
+			bold: true,
+			spacingAfter: 240
+		}),
+		p(`OUR REF: ${f.ourRef}`, {
+			bold: true,
+			spacingAfter: 40
+		}),
+		p("YOUR REF: ..............................", { spacingAfter: 240 }),
+		p("TO WHOM IT MAY CONCERN", {
+			bold: true,
+			spacingAfter: 240
+		}),
+		p("ATTESTATION OF BANK ACCOUNT", {
+			bold: true,
+			size: 26,
+			align: AlignmentType.CENTER,
+			color: NAVY,
+			spacingAfter: 320
+		}),
+		rich([
+			{ text: `The ${inst.name} an affiliate to the ${inst.affiliate}, authorised to operate as a micro financial institution under ${inst.regNo} and ${inst.cobac}, and a shareholder in ${inst.shareholder} hereby attest that ` },
+			{
+				text: f.memberName.toUpperCase(),
+				bold: true
+			},
+			{ text: " is a member of this financial institution and operates a savings and current account number " },
+			{
+				text: f.accountNumber,
+				bold: true
+			},
+			{ text: " in our books." }
+		]),
+		rich([
+			{ text: `As at today ${longDate(f.issueDate)}, ${pronoun} account has a credit balance of ` },
+			{
+				text: `${fmt(f.closingBalance)} FCFA`,
+				bold: true
+			},
+			{ text: ` (${words}).` }
+		]),
+		p("We hereby confirm that:", {
+			bold: true,
+			spacingAfter: 80
+		}),
+		rich([{ text: "The funds indicated above are readily available to the account holder." }], AlignmentType.LEFT),
+		rich([{ text: "The funds are free from any lien, hold, or encumbrance." }], AlignmentType.LEFT),
+		rich([{ text: `The client has no outstanding loans, overdrafts, or credit facilities with ${inst.name.replace(/\s*\(MFI\)/, "")}.` }], AlignmentType.LEFT),
+		rich([{ text: "In testimony whereof, this attestation is issued to serve the purpose for which it deserves." }]),
+		...doneIn(f, inst)
+	];
+}
+function attestationOfNonIndebtedness(f, inst) {
+	return [
+		new Paragraph({ children: [new PageBreak()] }),
+		...topSpace(),
+		p(`OUR REF: ${f.ourRef}`, {
+			bold: true,
+			spacingAfter: 240
+		}),
+		p("TO WHOM IT MAY CONCERN", {
+			bold: true,
+			spacingAfter: 240
+		}),
+		p("ATTESTATION OF NON INDEBTEDNESS", {
+			bold: true,
+			size: 26,
+			align: AlignmentType.CENTER,
+			color: NAVY,
+			spacingAfter: 320
+		}),
+		rich([
+			{ text: `The ${inst.name} an affiliate to the ${inst.affiliate}, authorised to operate as a micro financial institution under ${inst.regNo} and ${inst.cobac}, and a shareholder in ${inst.shareholder} hereby attest that ` },
+			{
+				text: f.memberName.toUpperCase(),
+				bold: true
+			},
+			{ text: " who operates a savings and current account number " },
+			{
+				text: f.accountNumber,
+				bold: true
+			},
+			{ text: " in our books is not indebted to MMOCCUL as at date." }
+		]),
+		rich([{ text: "IN TESTIMONY WHEREOF, THIS ATTESTATION IS ISSUED TO SERVE THE PURPOSE FOR WHICH IT DESERVES." }]),
+		...doneIn(f, inst)
+	];
+}
+function attestationOfDomiciliation(f, inst) {
+	const widths = [
+		1700,
+		1700,
+		2560,
+		1200,
+		2200
+	];
+	const heads = [
+		"BANK CODE",
+		"BRANCH CODE",
+		"ACCOUNT NUMBER",
+		"RIB KEY",
+		"SWIFT CODE"
+	];
+	const vals = [
+		inst.bankCode,
+		inst.branchCode,
+		inst.bankAccountNumber,
+		inst.ribKey,
+		inst.swift
+	];
+	return [
+		new Paragraph({ children: [new PageBreak()] }),
+		...topSpace(),
+		p(`OUR REF: ${f.ourRef}`, {
+			bold: true,
+			spacingAfter: 40
+		}),
+		p("YOUR REF: ..............................", { spacingAfter: 240 }),
+		p("TO WHOM IT MAY CONCERN", {
+			bold: true,
+			spacingAfter: 200
+		}),
+		p("ATTESTATION OF DOMICILIATION OF BANK ACCOUNT", {
+			bold: true,
+			size: 26,
+			align: AlignmentType.CENTER,
+			color: NAVY,
+			spacingAfter: 320
+		}),
+		rich([{ text: `The ${inst.name} authorised to operate as a micro financial institution under ${inst.regNo}, a shareholder of ${inst.shareholder}, operating account number:` }]),
+		new Table({
+			width: {
+				size: CONTENT_W,
+				type: WidthType.DXA
+			},
+			columnWidths: widths,
+			rows: [new TableRow({ children: heads.map((h, i) => headerCell(h, widths[i])) }), new TableRow({ children: vals.map((v, i) => bodyCell(v, widths[i], {
+				align: AlignmentType.CENTER,
+				bold: true
+			})) })]
+		}),
+		p("", { spacingAfter: 120 }),
+		p(`IBAN ${inst.iban}`, {
+			bold: true,
+			align: AlignmentType.CENTER,
+			size: 24,
+			color: NAVY,
+			spacingAfter: 280
+		}),
+		rich([
+			{ text: "We hereby attest that " },
+			{
+				text: f.memberName.toUpperCase(),
+				bold: true
+			},
+			{ text: " has a savings account with the above Financial Institution with account number " },
+			{
+				text: f.accountNumber,
+				bold: true
+			},
+			{ text: f.openingDate ? ` since ${shortDate(f.openingDate)}.` : "." }
+		]),
+		rich([{ text: "IN TESTIMONY WHEREOF THIS ATTESTATION IS ISSUED TO SERVE THE PURPOSE FOR WHICH IT DESERVES." }]),
+		...doneIn(f, inst)
+	];
+}
+var SMALL = 14;
+function stmtHead(text, width) {
+	return headerCell(text, width, SMALL);
+}
+function stmtCell(text, width, opts = {}) {
+	return bodyCell(text, width, {
+		...opts,
+		size: SMALL
+	});
+}
+function statement(f, inst) {
+	const widths = [
+		950,
+		2150,
+		1400,
+		1750,
+		950,
+		950,
+		900,
+		310
+	];
+	const heads = [
+		"Optn Date",
+		"Description",
+		"Representative",
+		"Reference",
+		"Debit",
+		"Credit",
+		"Balance",
+		"Sens"
+	];
+	const w = (i) => widths[i];
+	const opening = num(f.openingBalance);
+	let running = opening;
+	let totalDebit = 0;
+	let totalCredit = 0;
+	const sens = (v) => v < 0 ? "Dr" : "Cr";
+	const rows = [new TableRow({
+		tableHeader: true,
+		children: heads.map((h, i) => stmtHead(h, w(i)))
+	}), new TableRow({ children: [
+		stmtCell(shortDate(f.startDate), w(0), {
+			fill: "EAF6FC",
+			align: AlignmentType.CENTER
+		}),
+		stmtCell(`Balance brought forward / Solde au ${shortDate(f.startDate)}`, w(1), {
+			bold: true,
+			fill: "EAF6FC"
+		}),
+		stmtCell(f.memberName.toUpperCase(), w(2), { fill: "EAF6FC" }),
+		stmtCell("-", w(3), {
+			fill: "EAF6FC",
+			align: AlignmentType.CENTER
+		}),
+		stmtCell(fmt(f.bfDebit || 0), w(4), {
+			fill: "EAF6FC",
+			align: AlignmentType.RIGHT
+		}),
+		stmtCell(fmt(f.bfCredit || 0), w(5), {
+			fill: "EAF6FC",
+			align: AlignmentType.RIGHT
+		}),
+		stmtCell(fmt(opening), w(6), {
+			bold: true,
+			align: AlignmentType.RIGHT,
+			fill: "EAF6FC"
+		}),
+		stmtCell(sens(opening), w(7), {
+			fill: "EAF6FC",
+			align: AlignmentType.CENTER
+		})
+	] })];
+	f.transactions.forEach((t, idx) => {
+		const d = num(t.debit);
+		const c = num(t.credit);
+		totalDebit += d;
+		totalCredit += c;
+		running = running - d + c;
+		const ref = t.reference?.trim() || makeReference(t.date || f.endDate, idx + 1);
+		rows.push(new TableRow({ children: [
+			stmtCell(shortDate(t.date) || shortDate(f.endDate), w(0), { align: AlignmentType.CENTER }),
+			stmtCell(t.description || `CASH ${c ? "IN" : "OUT"} ${f.memberNumber} MEMBERS SAVINGS`, w(1)),
+			stmtCell(t.representative?.trim() || f.memberName.toUpperCase(), w(2)),
+			stmtCell(ref, w(3)),
+			stmtCell(fmt(d), w(4), { align: AlignmentType.RIGHT }),
+			stmtCell(fmt(c), w(5), { align: AlignmentType.RIGHT }),
+			stmtCell(fmt(running), w(6), { align: AlignmentType.RIGHT }),
+			stmtCell(sens(running), w(7), { align: AlignmentType.CENTER })
+		] }));
+	});
+	rows.push(new TableRow({ children: [
+		stmtCell("-", w(0), {
+			fill: "E2E8F0",
+			align: AlignmentType.CENTER
+		}),
+		stmtCell("TOTAL PERIOD / TOTAL PERIODE", w(1), {
+			bold: true,
+			fill: "E2E8F0"
+		}),
+		stmtCell("-", w(2), { fill: "E2E8F0" }),
+		stmtCell("-", w(3), {
+			fill: "E2E8F0",
+			align: AlignmentType.CENTER
+		}),
+		stmtCell(fmt(totalDebit), w(4), {
+			bold: true,
+			align: AlignmentType.RIGHT,
+			fill: "E2E8F0"
+		}),
+		stmtCell(fmt(totalCredit), w(5), {
+			bold: true,
+			align: AlignmentType.RIGHT,
+			fill: "E2E8F0"
+		}),
+		stmtCell(fmt(running), w(6), {
+			bold: true,
+			align: AlignmentType.RIGHT,
+			fill: "E2E8F0"
+		}),
+		stmtCell(sens(running), w(7), {
+			bold: true,
+			fill: "E2E8F0",
+			align: AlignmentType.CENTER
+		})
+	] }));
+	const sumCell = (lines, width, opts = {}) => new TableCell({
+		borders: cellBorders,
+		width: {
+			size: width,
+			type: WidthType.DXA
+		},
+		margins: {
+			top: 40,
+			bottom: 40,
+			left: 60,
+			right: 60
+		},
+		children: lines.map((line) => new Paragraph({
+			alignment: opts.align ?? AlignmentType.LEFT,
+			spacing: { after: 0 },
+			children: [new TextRun({
+				text: line,
+				size: SMALL,
+				bold: !!opts.bold,
+				font: SANS
+			})]
+		}))
+	});
+	const sw = [
+		2340,
+		2340,
+		2340,
+		2340
+	];
+	const summary = new Table({
+		width: {
+			size: CONTENT_W,
+			type: WidthType.DXA
+		},
+		columnWidths: sw,
+		rows: [
+			new TableRow({ children: [
+				sumCell(["Balance brought forward :", "Solde debut periode :"], sw[0]),
+				sumCell([fmt(opening)], sw[1], {
+					bold: true,
+					align: AlignmentType.RIGHT
+				}),
+				sumCell(["Number Trxn Period", "Total Trxn Periode"], sw[2]),
+				sumCell([String(f.transactions.length)], sw[3], {
+					bold: true,
+					align: AlignmentType.RIGHT
+				})
+			] }),
+			new TableRow({ children: [
+				sumCell(["Total Debit Period :", "Total Debit Periode :"], sw[0]),
+				sumCell([fmt(totalDebit)], sw[1], {
+					bold: true,
+					align: AlignmentType.RIGHT
+				}),
+				sumCell(["Total Credit Period :", "Total Credit Periode :"], sw[2]),
+				sumCell([fmt(totalCredit)], sw[3], {
+					bold: true,
+					align: AlignmentType.RIGHT
+				})
+			] }),
+			new TableRow({ children: [
+				sumCell(["Balance as at :", `Solde au ${shortDate(f.endDate)} :`], sw[0]),
+				sumCell([`${fmt(running)} ${sens(running)}`], sw[1], {
+					bold: true,
+					align: AlignmentType.RIGHT
+				}),
+				sumCell(["Currency / Devise :"], sw[2]),
+				sumCell([inst.currency], sw[3], {
+					bold: true,
+					align: AlignmentType.RIGHT
+				})
+			] })
+		]
+	});
+	const info = (leftLabel, leftValue, rightLabel, rightValue) => new Paragraph({
+		spacing: { after: 40 },
+		tabStops: [{
+			type: TabStopType.RIGHT,
+			position: 9360
+		}],
+		children: [
+			new TextRun({
+				text: `${leftLabel} `,
+				italics: true,
+				size: SMALL,
+				font: SANS
+			}),
+			new TextRun({
+				text: leftValue,
+				bold: true,
+				size: SMALL,
+				font: SANS
+			}),
+			new TextRun({
+				text: `\t${rightLabel} `,
+				italics: true,
+				size: SMALL,
+				font: SANS
+			}),
+			new TextRun({
+				text: rightValue,
+				bold: true,
+				size: SMALL,
+				font: SANS
+			})
+		]
+	});
+	return [
+		new Paragraph({ children: [new PageBreak()] }),
+		p("MEMBER ACCOUNT STATEMENT", {
+			bold: true,
+			size: 20,
+			align: AlignmentType.CENTER,
+			color: NAVY,
+			spacingAfter: 160
+		}),
+		info("Branch/Agence:", f.branchName || inst.branch, "Currency/Devise:", inst.currency),
+		info("Date:", shortDate(f.issueDate), "Start Date/Date Debut:", shortDate(f.startDate)),
+		info("Account No./No. Compte:", `${f.memberNumber || "-"}   Members Savings ${f.accountNumber}`, "End Date/Date Fin:", shortDate(f.endDate)),
+		info("Account Name/Nom du Compte:", f.memberName.toUpperCase(), "Statement No.:", f.memberNumber || "-"),
+		p("", { spacingAfter: 80 }),
+		new Table({
+			width: {
+				size: CONTENT_W,
+				type: WidthType.DXA
+			},
+			columnWidths: widths,
+			rows
+		}),
+		p("", { spacingAfter: 160 }),
+		summary
+	];
+}
+async function buildDocument(f, inst) {
+	const words = f.amountInWords.trim() !== "" ? f.amountInWords.trim().toUpperCase() : amountWords(num(f.closingBalance));
+	const doc = new File({
+		styles: {
+			default: { document: { run: {
+				font: "Arial",
+				size: 22
+			} } },
+			paragraphStyles: [{
+				id: "Heading1",
+				name: "Heading 1",
+				basedOn: "Normal",
+				next: "Normal",
+				quickFormat: true,
+				run: {
+					size: 30,
+					bold: true,
+					font: "Arial",
+					color: NAVY
+				},
+				paragraph: {
+					spacing: {
+						before: 240,
+						after: 240
+					},
+					outlineLevel: 0
+				}
+			}]
+		},
+		sections: [{
+			properties: { page: {
+				size: {
+					width: 12240,
+					height: 15840
+				},
+				margin: {
+					top: 1080,
+					right: 1440,
+					bottom: 1080,
+					left: 1440
+				}
+			} },
+			children: [
+				...attestationOfAccount(f, inst, words),
+				...attestationOfNonIndebtedness(f, inst),
+				...attestationOfDomiciliation(f, inst),
+				...statement(f, inst)
+			]
+		}]
+	});
+	return Packer.toBlob(doc);
+}
+var { saveAs } = import_FileSaver_min.default;
+var today = () => (/* @__PURE__ */ new Date()).toISOString().slice(0, 10);
+function blankForm() {
+	return {
+		memberName: "",
+		accountNumber: "",
+		memberNumber: "",
+		branchName: DEFAULT_INSTITUTION.branch,
+		closingBalance: "",
+		amountInWords: "",
+		issueDate: today(),
+		openingDate: "",
+		startDate: "",
+		endDate: today(),
+		openingBalance: "",
+		ourRef: "MMOCCUL /ATT/07/2026",
+		gender: "his",
+		bfDebit: "",
+		bfCredit: "",
+		transactions: [emptyTxn()],
+		reps: [emptyRep()]
+	};
+}
+function Field({ label, required, children }) {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+		className: "space-y-1.5",
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Label, {
+			className: "text-xs font-semibold uppercase tracking-wide text-muted-foreground",
+			children: [
+				label,
+				" ",
+				required ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+					className: "text-destructive",
+					children: "*"
+				}) : null
+			]
+		}), children]
+	});
+}
+function Index() {
+	const [form, setForm] = (0, import_react.useState)(blankForm);
+	const [inst, setInst] = (0, import_react.useState)(DEFAULT_INSTITUTION);
+	const [busy, setBusy] = (0, import_react.useState)(false);
+	const [error, setError] = (0, import_react.useState)(null);
+	const [result, setResult] = (0, import_react.useState)(null);
+	const [gen, setGen] = (0, import_react.useState)({
+		totalDebit: "",
+		totalCredit: "",
+		count: "12"
+	});
+	const set = (key, value) => setForm((f) => ({
+		...f,
+		[key]: value
+	}));
+	const setTxn = (id, key, value) => setForm((f) => ({
+		...f,
+		transactions: f.transactions.map((t) => t.id === id ? {
+			...t,
+			[key]: value
+		} : t)
+	}));
+	const totals = form.transactions.reduce((acc, t) => ({
+		debit: acc.debit + num(t.debit),
+		credit: acc.credit + num(t.credit)
+	}), {
+		debit: 0,
+		credit: 0
+	});
+	const computedClosing = num(form.openingBalance) - totals.debit + totals.credit;
+	const runningBalances = (() => {
+		let r = num(form.openingBalance);
+		return form.transactions.map((t) => {
+			r = r - num(t.debit) + num(t.credit);
+			return r;
+		});
+	})();
+	function autoGenerate() {
+		setError(null);
+		if (!form.startDate || !form.endDate) {
+			setError("Statement start and end dates are required to distribute transactions.");
+			return;
+		}
+		const rows = generateTransactions({
+			totalDebit: num(gen.totalDebit),
+			totalCredit: num(gen.totalCredit),
+			count: Math.max(1, Math.floor(num(gen.count) || 1)),
+			startDate: form.startDate,
+			endDate: form.endDate,
+			memberName: form.memberName,
+			memberNumber: form.memberNumber,
+			reps: form.reps
+		}, num(form.openingBalance));
+		if (rows.length === 0) {
+			setError("Provide a total debit and/or total credit amount to generate transactions.");
+			return;
+		}
+		setForm((f) => ({
+			...f,
+			transactions: rows,
+			closingBalance: String(num(f.openingBalance) - num(gen.totalDebit) + num(gen.totalCredit))
+		}));
+	}
+	function addRow() {
+		const t = emptyTxn();
+		t.representative = form.memberName.toUpperCase();
+		t.date = form.endDate;
+		t.reference = makeReference(form.endDate || today(), form.transactions.length + 1);
+		set("transactions", [...form.transactions, t]);
+	}
+	async function generate() {
+		setError(null);
+		if (!form.memberName.trim() || !form.accountNumber.trim() || form.closingBalance === "") {
+			setError("Member full name, account number and closing balance are required.");
+			return;
+		}
+		if (!form.issueDate) {
+			setError("Issue date is required.");
+			return;
+		}
+		setBusy(true);
+		try {
+			const blob = await buildDocument(form, inst);
+			const safe = form.memberName.trim().replace(/\s+/g, "_").replace(/[^\w-]/g, "");
+			setResult({
+				blob,
+				name: `MMOCCUL_Documents_${safe}_${form.issueDate}.docx`
+			});
+		} catch (e) {
+			setError(e instanceof Error ? e.message : "Failed to generate the document.");
+		} finally {
+			setBusy(false);
+		}
+	}
+	function clearAll() {
+		setForm(blankForm());
+		setResult(null);
+		setError(null);
+	}
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+		className: "min-h-screen bg-background",
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("header", {
+			className: "bg-primary text-primary-foreground",
+			children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "mx-auto flex max-w-6xl flex-col gap-1 px-4 py-6 sm:px-6",
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+						className: "text-xs font-semibold uppercase tracking-[0.2em] text-accent",
+						children: inst.slogan
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
+						className: "text-xl font-bold sm:text-2xl",
+						children: "MMOCCUL Document Generator"
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+						className: "text-sm opacity-80",
+						children: inst.name
+					})
+				]
+			})
+		}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("main", {
+			className: "mx-auto max-w-6xl space-y-6 px-4 py-8 sm:px-6",
+			children: [
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardTitle, {
+					className: "text-primary",
+					children: "Member Information"
+				}) }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(CardContent, {
+					className: "grid gap-4 sm:grid-cols-2 lg:grid-cols-3",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Field, {
+							label: "Member Full Name",
+							required: true,
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
+								value: form.memberName,
+								onChange: (e) => set("memberName", e.target.value),
+								placeholder: "e.g. JANE AKUM NDIVE"
+							})
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Field, {
+							label: "Account Number",
+							required: true,
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
+								value: form.accountNumber,
+								onChange: (e) => set("accountNumber", e.target.value),
+								placeholder: "37360134401"
+							})
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Field, {
+							label: "Member / Statement No.",
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
+								value: form.memberNumber,
+								onChange: (e) => set("memberNumber", e.target.value),
+								placeholder: "601344"
+							})
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Field, {
+							label: "Branch Name",
+							required: true,
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
+								value: form.branchName,
+								onChange: (e) => set("branchName", e.target.value),
+								placeholder: "Mmoccul Yaounde"
+							})
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Field, {
+							label: "Shareholder Bank",
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("select", {
+								className: "h-9 w-full rounded-md border border-input bg-background px-3 text-sm",
+								value: inst.shareholder,
+								onChange: (e) => setInst((s) => ({
+									...s,
+									shareholder: e.target.value
+								})),
+								children: [SHAREHOLDERS.map((s) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+									value: s,
+									children: s
+								}, s)), SHAREHOLDERS.includes(inst.shareholder) ? null : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+									value: inst.shareholder,
+									children: inst.shareholder
+								})]
+							})
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Field, {
+							label: "Closing Balance (FCFA)",
+							required: true,
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
+								inputMode: "numeric",
+								value: form.closingBalance,
+								onChange: (e) => set("closingBalance", e.target.value),
+								placeholder: "3575680"
+							})
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Field, {
+							label: "Amount in Words (optional)",
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
+								value: form.amountInWords,
+								onChange: (e) => set("amountInWords", e.target.value),
+								placeholder: form.closingBalance ? amountWords(num(form.closingBalance)) : "Auto-generated"
+							})
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Field, {
+							label: "Pronoun in attestation",
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("select", {
+								className: "h-9 w-full rounded-md border border-input bg-background px-3 text-sm",
+								value: form.gender,
+								onChange: (e) => set("gender", e.target.value),
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+									value: "his",
+									children: "his"
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+									value: "her",
+									children: "her"
+								})]
+							})
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Field, {
+							label: "Issue Date",
+							required: true,
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
+								type: "date",
+								value: form.issueDate,
+								onChange: (e) => set("issueDate", e.target.value)
+							})
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Field, {
+							label: "Account Opening Date",
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
+								type: "date",
+								value: form.openingDate,
+								onChange: (e) => set("openingDate", e.target.value)
+							})
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Field, {
+							label: "Our Reference",
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
+								value: form.ourRef,
+								onChange: (e) => set("ourRef", e.target.value)
+							})
+						})
+					]
+				})] }),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardTitle, {
+					className: "text-primary",
+					children: "Statement Period"
+				}) }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(CardContent, {
+					className: "grid gap-4 sm:grid-cols-3",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Field, {
+							label: "Statement Start Date",
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
+								type: "date",
+								value: form.startDate,
+								onChange: (e) => set("startDate", e.target.value)
+							})
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Field, {
+							label: "Statement End Date",
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
+								type: "date",
+								value: form.endDate,
+								onChange: (e) => set("endDate", e.target.value)
+							})
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Field, {
+							label: "Opening Balance (FCFA)",
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
+								inputMode: "numeric",
+								value: form.openingBalance,
+								onChange: (e) => set("openingBalance", e.target.value),
+								placeholder: "3374425"
+							})
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Field, {
+							label: "Brought-forward Debit (FCFA)",
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
+								inputMode: "numeric",
+								value: form.bfDebit,
+								onChange: (e) => set("bfDebit", e.target.value),
+								placeholder: "23015000"
+							})
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Field, {
+							label: "Brought-forward Credit (FCFA)",
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
+								inputMode: "numeric",
+								value: form.bfCredit,
+								onChange: (e) => set("bfCredit", e.target.value),
+								placeholder: "26389425"
+							})
+						})
+					]
+				})] }),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardTitle, {
+					className: "text-primary",
+					children: "Auto-generate Transactions"
+				}) }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(CardContent, {
+					className: "space-y-4",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "text-sm text-muted-foreground",
+							children: "Enter the period totals and the tool will distribute debits and credits across the statement period, with unique references generated per operation date."
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "space-y-3 rounded-md border p-3",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "flex items-center justify-between gap-4",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+									className: "text-xs font-semibold uppercase tracking-wide text-muted-foreground",
+									children: "Representatives (leave times blank to let the tool decide)"
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+									type: "button",
+									variant: "outline",
+									size: "sm",
+									onClick: () => set("reps", [...form.reps, emptyRep()]),
+									children: "+ Add Representative"
+								})]
+							}), form.reps.map((r) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "grid gap-3 sm:grid-cols-[2fr_1fr_auto]",
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
+										value: r.name,
+										placeholder: form.memberName.toUpperCase() || "Representative name",
+										onChange: (e) => set("reps", form.reps.map((x) => x.id === r.id ? {
+											...x,
+											name: e.target.value
+										} : x))
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
+										inputMode: "numeric",
+										value: r.count,
+										placeholder: "Times (auto)",
+										onChange: (e) => set("reps", form.reps.map((x) => x.id === r.id ? {
+											...x,
+											count: e.target.value
+										} : x))
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+										type: "button",
+										variant: "ghost",
+										className: "text-destructive",
+										onClick: () => set("reps", form.reps.filter((x) => x.id !== r.id)),
+										children: "Remove"
+									})
+								]
+							}, r.id))]
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "grid gap-4 sm:grid-cols-4",
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Field, {
+									label: "Total Debit (FCFA)",
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
+										inputMode: "numeric",
+										value: gen.totalDebit,
+										onChange: (e) => setGen((g) => ({
+											...g,
+											totalDebit: e.target.value
+										})),
+										placeholder: "18020000"
+									})
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Field, {
+									label: "Total Credit (FCFA)",
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
+										inputMode: "numeric",
+										value: gen.totalCredit,
+										onChange: (e) => setGen((g) => ({
+											...g,
+											totalCredit: e.target.value
+										})),
+										placeholder: "18221255"
+									})
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Field, {
+									label: "Number of Transactions",
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
+										inputMode: "numeric",
+										value: gen.count,
+										onChange: (e) => setGen((g) => ({
+											...g,
+											count: e.target.value
+										})),
+										placeholder: "24"
+									})
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+									className: "flex items-end",
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+										type: "button",
+										className: "w-full",
+										onClick: autoGenerate,
+										children: "Generate Transactions"
+									})
+								})
+							]
+						})
+					]
+				})] }),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(CardHeader, {
+					className: "flex flex-row items-center justify-between gap-4",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardTitle, {
+						className: "text-primary",
+						children: "Transactions"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+						type: "button",
+						onClick: addRow,
+						children: "+ Add Transaction"
+					})]
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(CardContent, {
+					className: "space-y-4",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+							className: "overflow-x-auto",
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("table", {
+								className: "w-full min-w-[1100px] border-separate border-spacing-y-2 text-sm",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("thead", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("tr", {
+									className: "text-left text-xs uppercase tracking-wide text-muted-foreground",
+									children: [
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("th", {
+											className: "px-2 font-semibold",
+											children: "Date"
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("th", {
+											className: "px-2 font-semibold",
+											children: "Description"
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("th", {
+											className: "px-2 font-semibold",
+											children: "Representative"
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("th", {
+											className: "px-2 font-semibold",
+											children: "Reference"
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("th", {
+											className: "px-2 font-semibold",
+											children: "Debit"
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("th", {
+											className: "px-2 font-semibold",
+											children: "Credit"
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("th", {
+											className: "px-2 font-semibold",
+											children: "Balance"
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("th", {
+											className: "px-2 font-semibold",
+											children: "Sens"
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("th", {})
+									]
+								}) }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("tbody", { children: form.transactions.map((t, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("tr", { children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {
+										className: "px-1",
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
+											type: "date",
+											value: t.date,
+											onChange: (e) => setTxn(t.id, "date", e.target.value)
+										})
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {
+										className: "px-1",
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
+											value: t.description,
+											placeholder: "CASH IN MEMBERS SAVINGS",
+											onChange: (e) => setTxn(t.id, "description", e.target.value)
+										})
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {
+										className: "px-1",
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
+											value: t.representative,
+											placeholder: form.memberName.toUpperCase() || "Representative",
+											onChange: (e) => setTxn(t.id, "representative", e.target.value)
+										})
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {
+										className: "px-1",
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
+											value: t.reference,
+											onChange: (e) => setTxn(t.id, "reference", e.target.value)
+										})
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {
+										className: "px-1",
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
+											inputMode: "numeric",
+											value: t.debit,
+											onChange: (e) => setTxn(t.id, "debit", e.target.value)
+										})
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {
+										className: "px-1",
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
+											inputMode: "numeric",
+											value: t.credit,
+											onChange: (e) => setTxn(t.id, "credit", e.target.value)
+										})
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {
+										className: "whitespace-nowrap px-2 text-right tabular-nums",
+										children: fmt(runningBalances[i] ?? 0)
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {
+										className: "px-2 text-center",
+										children: (runningBalances[i] ?? 0) < 0 ? "Dr" : "Cr"
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {
+										className: "px-1",
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+											type: "button",
+											variant: "ghost",
+											className: "text-destructive",
+											onClick: () => set("transactions", form.transactions.filter((x) => x.id !== t.id)),
+											children: "Remove"
+										})
+									})
+								] }, t.id)) })]
+							})
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Separator, {}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "flex flex-wrap gap-6 text-sm",
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: ["Total debit: ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: fmt(totals.debit) })] }),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: ["Total credit: ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: fmt(totals.credit) })] }),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: ["Computed closing: ", /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("strong", { children: [fmt(computedClosing), " FCFA"] })] })
+							]
+						})
+					]
+				})] }),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Accordion, {
+					type: "single",
+					collapsible: true,
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(AccordionItem, {
+						value: "settings",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(AccordionTrigger, {
+							className: "text-primary",
+							children: "Institution settings"
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AccordionContent, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+							className: "grid gap-4 pt-2 sm:grid-cols-2 lg:grid-cols-3",
+							children: Object.keys(DEFAULT_INSTITUTION).map((k) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Field, {
+								label: k.replace(/([A-Z])/g, " $1"),
+								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
+									value: inst[k],
+									onChange: (e) => setInst((s) => ({
+										...s,
+										[k]: e.target.value
+									}))
+								})
+							}, k))
+						}) })]
+					})
+				}),
+				error ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+					className: "rounded-md border border-destructive/40 bg-destructive/10 px-4 py-3 text-sm text-destructive",
+					children: error
+				}) : null,
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "flex flex-wrap items-center gap-3",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+						size: "lg",
+						className: "text-base",
+						disabled: busy,
+						onClick: generate,
+						children: busy ? "Generating…" : "Generate Document"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+						size: "lg",
+						variant: "outline",
+						onClick: clearAll,
+						children: "Clear Form"
+					})]
+				}),
+				result ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Card, {
+					className: "border-accent",
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(CardContent, {
+						className: "flex flex-wrap items-center justify-between gap-4 pt-6",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "font-semibold text-primary",
+							children: "Document generated successfully"
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "text-sm text-muted-foreground",
+							children: result.name
+						})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+							size: "lg",
+							onClick: () => saveAs(result.blob, result.name),
+							children: "Download .docx"
+						})]
+					})
+				}) : null
+			]
+		})]
+	});
+}
+//#endregion
+export { Index as component };
