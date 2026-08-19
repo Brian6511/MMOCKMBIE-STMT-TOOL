@@ -15,6 +15,7 @@ import {
 import {
   DEFAULT_INSTITUTION,
   SHAREHOLDERS,
+  BRANCHES,
   amountWords,
   emptyRep,
   emptyTxn,
@@ -233,11 +234,20 @@ function Index() {
               />
             </Field>
             <Field label="Branch Name" required>
-              <Input
+              <select
+                className="h-9 w-full rounded-md border border-input bg-background px-3 text-sm"
                 value={form.branchName}
                 onChange={(e) => set("branchName", e.target.value)}
-                placeholder="Mmoccul Yaounde"
-              />
+              >
+                {BRANCHES.map((branch) => (
+                  <option key={branch} value={branch}>
+                    {branch}
+                  </option>
+                ))}
+                {!BRANCHES.includes(form.branchName as (typeof BRANCHES)[number]) && form.branchName ? (
+                  <option value={form.branchName}>{form.branchName}</option>
+                ) : null}
+              </select>
             </Field>
             <Field label="Shareholder Bank">
               <select

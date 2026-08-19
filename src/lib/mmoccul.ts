@@ -31,9 +31,26 @@ export function emptyRep(): Rep {
 }
 
 export const SHAREHOLDERS = [
-  "UBA",
-  "NFC BANK",
-  "AFRILAND FIRST BANK PLC",
+  "United Bank for Africa (UBA)",
+  "National Financial Credit Plc. (NFC Bank)",
+  "Afriland First Bank Plc.",
+] as const;
+
+export const BRANCHES = [
+  "Yaoundé – Monte Centre (Headquarters / Corporate Office)",
+  "Yaoundé – Etoug-Ebe",
+  "Yaoundé – Damas",
+  "Yaoundé – Messassi",
+  "Douala – Bonaberi",
+  "Douala – Village",
+  "Bafoussam",
+  "Bamenda",
+  "Buea",
+  "Dschang",
+  "Kumba",
+  "Bertoua",
+  "Mmockmbie",
+  "Kribi",
 ] as const;
 
 /**
@@ -98,10 +115,10 @@ export const DEFAULT_INSTITUTION: Institution = {
   regNo: "Coopgic Reg No. 17/035/CMR/SW/55/290/CCA/360/3601",
   cobac: "COBAC DECISION N° D-2021/317",
   minfi: "0000381",
-  shareholder: "National Financial Credit Plc. (NFC BANK)",
+  shareholder: "United Bank for Africa (UBA)",
   slogan: "Where Dreams are Realised",
   city: "Buea",
-  branch: "Mmoccul Buea",
+  branch: "Yaoundé – Monte Centre (Headquarters / Corporate Office)",
   tel: "+237 680 485 489 / 675 952 741",
   email: "contact@mmoccul.com",
   website: "www.mmoccul.com",

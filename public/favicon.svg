@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="UBA brand icon">
+  <defs>
+    <linearGradient id="ubaGradient" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#0b3d91"/>
+      <stop offset="100%" stop-color="#1d63d9"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="24" fill="url(#ubaGradient)"/>
+  <path d="M26 96V32h16.5l18.8 28.2L80 32h17.5v64H81.7V61.8L65.3 86H54.7L38.3 61.8V96H26Z" fill="#ffffff"/>
+  <path d="M84 96h18V32H84v64Z" fill="#e9f0ff" opacity="0.9"/>
+</svg>
